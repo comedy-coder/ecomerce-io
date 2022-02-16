@@ -1,0 +1,130 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header__bar
+{
+    height:50px ;
+}
+    
+
+
+.navbar
+{
+    @include flex (center, space-between );
+    height: 50px;
+    
+    &__logo
+    {
+        @include flex (center,unset);
+    }
+    &__search
+    {   position: relative;
+        color: $main-color;
+        font-size: 1.5rem;
+        @include flex(center,space-between);
+        &__input
+        {   outline: none;
+            width: 425px;
+            height: 34px;
+            padding: 12px;
+            font-size: 1.1rem;
+            color: #999999;
+        }
+        &__icon
+        {   width: 34px;
+            height: 34px;
+            @include flex(center,center);
+            position: absolute;
+            
+            right : 0;
+        
+            &:hover{
+                background-color: #333; 
+            }
+        }
+    }
+    &__controls
+    {
+        @include flex (center ,center);
+        color: white;
+        font-size: 1.5rem;
+        &__message
+        {
+            margin-left: 10px;
+        }
+    }
+    &__account
+    {   &__list{
+        font-size: 1.1rem;
+        @include flex(center, center);
+        color: white;
+    }
+    }
+}
+.header__main
+{
+    height:42px ;
+    background-color : #e4e4e4;
+}
+.container-header
+{
+    height: 42px;
+}
+.main-menu
+{
+    &__list{
+        @include flex(center, flex-start);
+        height : 42px;
+        font-size:14px;
+        font-weight: 400;
+        color: #333;
+        
+        .icon-home {
+        font-size: 1.7rem;
+        
+    }
+        
+    &__item
+    {  text-align: center;
+        line-height: 42px;
+        display: block;
+        border-left : 1px solid #dddddd;
+        height: 42px;
+        width: auto;
+        padding: 0 10px;
+        &:hover{
+            background-color: aliceblue;
+            color: #ae4ad9;
+        }
+        &:nth-child(1)
+        {
+            border-left: none   ;
+        }
+        &:last-child
+        {
+            border-right: 1 solid #dddddd   ;
+        }
+        &:nth-child(5)
+        {
+            background-color: hotpink   ;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -400px;
+                left: 0;
+                width: 600px;
+                height: 400px;
+                display: block;
+                background-color: #ae4ad9;
+    
+            }
+        }
+        
+    }
+
+        
+    }
+
+        
+}
