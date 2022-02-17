@@ -1,0 +1,27 @@
+.genre-list__list{
+    width: 400px; 
+    background-color: white;  
+    font-size: 1.1rem;
+    display: none;
+    border: 1px solid #e8e8e8;
+    text-align: left;
+    margin: auto;
+    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    &__item{
+        color: #333;
+        &:nth-child(1)
+
+        {
+            color: red;
+            font-weight: 600;
+        }
+        &:nth-child(8)
+        {
+            color: red;
+            font-weight: 600;
+        }
+    }
+}

@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-    color: $main-color;
+    color: #AE72E4;
 }
 
 img {
@@ -108,4 +108,7 @@ img {
 
 .grid {
     display: grid;
+}
+.active {
+    background-color: aliceblue;
 }

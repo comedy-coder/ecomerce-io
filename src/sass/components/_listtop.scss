@@ -1,0 +1,31 @@
+@use "../variables" as *;
+.list-top__list{
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    display: none;
+    font-size: 1.1rem;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    
+    &__item
+    {   
+        color: #333;
+        text-align: left;
+        padding: 0 20px;
+        border: 1px solid #e8e8e8;
+        height: 36px;
+        width: 150px;
+        
+        &:hover
+        {
+            color: #AE72E4;
+            cursor: pointer;
+        }
+         i {
+            margin-right: 8px;
+            font-size: medium;
+        }
+    }
+}

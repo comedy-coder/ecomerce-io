@@ -2,9 +2,18 @@ import React from 'react'
 import logo from '../assets/images/logo.png'
 import ToogleButton from './ToogleButton'
 import { Link } from 'react-router-dom'
+import LIstGenre from './ListGenre'
+import ListTop from './ListTop'
+import { useLocation } from 'react-router-dom'
+
 const Header = () => {
     const mainNav = [
        
+        { 
+             display : "bx bx-home",
+             path : "/",
+             
+        },
         { 
              display : "HOT",
              path : "/hot",
@@ -24,7 +33,8 @@ const Header = () => {
         { 
              display : "THỂ LOẠI",
              path : "/the-loai",
-             icon: "bx bxs-down-arrow"
+             icon: "bx bxs-down-arrow",
+           
         },
         { 
              display : "XẾP HẠNG",
@@ -53,6 +63,8 @@ const Header = () => {
 
         },
     ]
+    const {pathname} = useLocation();
+    const activeNav = mainNav.findIndex(e=>e.path === pathname)
   return (
       <div className="header">
     <div className="header__bar "  style={{ 
@@ -95,26 +107,41 @@ const Header = () => {
     <div className="header__main">
         <div className="container-header">
             <div className="main-menu__list">
-                <div className="main-menu__list__item icon-home">
-                <Link to = "/">
-                <i class='bx bx-home'></i>
-                </Link>
-
-                </div>
+                
                 {mainNav.map((item,index)=> 
-                        <div className="main-menu__list__item" key={index}>
+                            
+
+                        <div className={`main-menu__list__item ${index === activeNav ? 'active' : ''}`} key={index}>
                             <Link to = {item.path}>
-                            {`${item.display}` }
+                            {index ===0 ? <i className={item.display}></i> : `${item.display}` }
                              <span className="item-arrow">
                                 <i className={item.icon}></i><i className={item.iconup}></i>
                                 </span>
                             </Link>
+                            {   index === 4 ? <LIstGenre /> : ''}
+                            {   index === 5 ? <ListTop /> : ''}
                         </div>
-                )}
-
+                            
+                            )}
             </div>
-
+            <div className="main-menu__toolbar">
+                <div className="main-menu__toolbar__icon">
+                    <div className="main-menu__toolbar__icon-i">
+                        i
+                    </div>
+                </div>
+                <div className="main-menu__toolbar__desc">
+                Nếu web/ảnh load chậm, TẢI NGAY ứng dụng VPN (1.1.1.1) tại đây để cải thiện tốc độ
+                </div>
+            </div>
+         
         </div>
+                          
+                    
+                            
+                
+
+
     </div>
     </div>
   )
