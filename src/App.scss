@@ -21,6 +21,7 @@ html {
 
 body {
     font-family: "Roboto", sans-serif;
+    background-color: #ebebeb;
    
 }
 
@@ -79,8 +80,8 @@ img {
 }
 .container {
     width: 100%;
-    max-width: 1620px;
-    padding: 0 50px;
+    max-width: 1060px;
+    padding: 0 15px;
     margin: auto;
 
     @include tablet {
@@ -93,7 +94,7 @@ img {
 }
 
 .main {
-    margin-top: $header-height;
+    margin-top: 40px;
     margin-bottom: 2rem;
     min-height: 100vh;
 

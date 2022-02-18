@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import LIstGenre from './ListGenre'
 import ListTop from './ListTop'
 import { useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { useRef } from 'react'
+import { useEffect } from 'react'
 
 const Header = () => {
     const mainNav = [
@@ -63,10 +66,20 @@ const Header = () => {
 
         },
     ]
+    const [darkMode,setdarkMode] = useState(false);
+    useEffect(() => {
+        if(darkMode)
+        { headerRef.current.style.backgroundColor = "black"; 
+        }
+        else{
+            headerRef.current.style.backgroundColor = "white";
+        }
+    },[darkMode]);
+    const headerRef = useRef(null);
     const {pathname} = useLocation();
     const activeNav = mainNav.findIndex(e=>e.path === pathname)
   return (
-      <div className="header">
+      <div className="header" ref={headerRef}>
     <div className="header__bar "  style={{ 
 
         
@@ -75,7 +88,7 @@ const Header = () => {
         backgroundPosition : 'top center',
    
       }}>
-            <div className="container-header">
+            <div className="container-header" >
                <div className="navbar">
             <div className="navbar__logo">
                 <img src={logo} alt="" />
@@ -88,7 +101,7 @@ const Header = () => {
             </label>
             <div className="navbar__controls">
                 <div className="navbar__controls__toggle">
-                    <ToogleButton />
+                    <ToogleButton onclick={()=> setdarkMode(true)}/>
                 </div>
                 <div className="navbar__controls__message">
                      <i class='bx bx-message-rounded'></i>

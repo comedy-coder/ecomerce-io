@@ -1,0 +1,43 @@
+.toggle-btn{
+    &__container
+    {
+        position: relative;
+        width: 30px;
+        height: 20px;
+        background-color: white;
+        border-radius: 50px;
+    }
+    &__circle
+    {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #3f3567;
+        position: absolute;
+        top : 50%;
+        transform: translateY(-50%);
+        right: 10%;
+    }
+    &__circle
+    {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #3f3567;
+        position: absolute;
+        top : 50%;
+        transform: translateY(-50%);
+        right: 10%;
+    }
+    &__button
+    {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #3f3567;
+        position: absolute;
+        top : 50%;
+        transform: translateY(-50%);
+        left: 10%;
+    }
+}
