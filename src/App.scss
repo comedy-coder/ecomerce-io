@@ -106,7 +106,11 @@ img {
         margin-top: calc(#{$header-mobile-height} + 10px);
     }
 }
-
+.home-main {
+    background-color: white;
+    padding: 17px 17px;
+    height: 100vh;
+}
 .grid {
     display: grid;
 }

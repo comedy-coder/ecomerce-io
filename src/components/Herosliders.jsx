@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Grid from './Grid'
 
 const Herosliders = props => {
     const data = props.data
@@ -8,13 +9,19 @@ const Herosliders = props => {
     <div className="hero-slider">
         <div className="hero-slider__title">
             {props.title}
-        </div>
+        </div>   
+        <div className="hero-slider__slider">
+               
+
               {
-                data.map((item, index) => (
-                    <HeroSliderItem key={index} item={item} />
-                ))
-            }
-    </div>
+                  data.map((item, index) => (
+                      <HeroSliderItem key={index} item={item} />
+                      ))
+                    }
+      
+                    
+        </div>
+     </div>
   )
 }
 
@@ -28,10 +35,12 @@ Herosliders.propTypes = {
 const HeroSliderItem = props =>{ 
     console.log(props.item)
     return (
-    <div className="hero-slder__item">
+        <section className="hero-slider__item">
         <div className="hero-slider__item__img">
             <img src={props.item.image} alt="" className="" />
         </div>
+            
+
         <div className="hero-slider__item__info">
             <div className="hero-slider__item__info__title">
                 <span>{props.item.title}</span>
@@ -43,6 +52,7 @@ const HeroSliderItem = props =>{
                 <span className={props.item.time}></span>
             </div>
         </div>
-    </div>
+          
+    </section>
 )}
 export default Herosliders

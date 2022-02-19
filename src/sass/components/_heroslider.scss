@@ -1,0 +1,30 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero-slider{
+    height: 252px;
+    
+    &__title {
+        font-size: 1.5rem;
+        color: $main-color;
+        margin-bottom: 13px;
+    }
+    &__slider
+    {
+        height: 220px;
+        max-width: 1500px;
+       
+        overflow-x:auto;
+         background-color: aqua;
+         @include flex(center, unset);
+        
+    }
+    &__item
+    { 
+        max-width: 1000px;
+        @include flex(center,center);
+        margin : 0 auto;
+         flex-direction: column;
+        
+    }
+}

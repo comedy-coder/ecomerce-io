@@ -6,7 +6,7 @@ import slider from '../assets/fake-data/slider'
 const Home = () => {
   return (
     <div className="home-main">
-       < Herosliders data={slider} />
+       < Herosliders data={slider} title={"TRUYỆN ĐỀ CỬ"}/>
     </div>
   )
 }
