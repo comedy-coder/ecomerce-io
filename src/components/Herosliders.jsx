@@ -1,26 +1,50 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Grid from './Grid'
+import PropTypes from 'prop-types';
+
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Herosliders = props => {
     const data = props.data
     
   return (
-    <div className="hero-slider">
+    <div className="swiper-contaier">
         <div className="hero-slider__title">
             {props.title}
         </div>   
-        <div className="hero-slider__slider">
+        
+        <Swiper  
+             modules={[Navigation, Pagination, Scrollbar, A11y]}
+             spaceBetween={10}
+             slidesPerView={6}
+             navigation
+            loop = {true}  
+             scrollbar={{ draggable: true }}
+             onSwiper={(swiper) => console.log(swiper)}
+             onSlideChange={() => console.log('slide change')}
+      
+      > 
+              
+       {
+           data.map((item, index) => (
+                      <SwiperSlide key={index}>
+                        
+                      <HeroSliderItem key={index} item={item} />
+
+                    </SwiperSlide>
+                      )
+                      )
+         }
+                    
+        </Swiper>
                
 
-              {
-                  data.map((item, index) => (
-                      <HeroSliderItem key={index} item={item} />
-                      ))
-                    }
       
                     
-        </div>
      </div>
   )
 }
